@@ -14,6 +14,7 @@ public class Main {
                 m1.arr[row][col] = Integer.parseInt(line_of_m[col]);
             }
         }
+        //PrintMatrix.printM(m1);
         String[] size_m2 = InputStr().split("\\s+");
         Matrica m2 = new Matrica(Integer.parseInt(size_m2[0]), Integer.parseInt(size_m2[1]));
         for (int row = 0; row < m2.rows_size; row++) {
@@ -22,10 +23,13 @@ public class Main {
                 m1.arr[row][col] = Integer.parseInt(line_of_m[col]);
             }
         }
+        Matrica m = AddMatrix.addmm(m1, m2);
+        if (m == null) {
+            System.out.print("ERROR");
 
-
-
-
+        } else {
+            PrintMatrix.printM(m);
+        }
     }
 
 
