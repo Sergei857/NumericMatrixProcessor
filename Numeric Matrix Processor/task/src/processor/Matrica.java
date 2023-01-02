@@ -1,14 +1,14 @@
 package processor;
 
 public class Matrica {
-    int x_size;
-    int y_size;
+    int rows_size;
+    int columns_size;
 
     Integer[][] arr;
 
-    public Matrica(int x_size, int y_size) {
-        this.x_size = x_size;
-        this.y_size = y_size;
-        this.arr = new Integer[x_size][y_size];
+    public Matrica(int rows_size, int columns_size) {
+        this.rows_size = rows_size;
+        this.columns_size = columns_size;
+        this.arr = new Integer[rows_size][columns_size];
     }
 }
