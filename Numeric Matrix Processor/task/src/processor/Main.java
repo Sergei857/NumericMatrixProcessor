@@ -11,6 +11,7 @@ public class Main {
             System.out.println("1. Add matrices");
             System.out.println("2. Multiply matrix by a constant");
             System.out.println("3. Multiply matrices");
+            System.out.println("4. Transpose matrix");
             System.out.println("0. Exit");
             System.out.print("Your choice: ");
             String chois = InputStr();
@@ -59,7 +60,58 @@ public class Main {
                     Matrica m_result = Matrica.mulmatrix(m1, m2);
                     Matrica.printMD(m_result);
                     System.out.println("");
+                }
+                case "4" -> {
 
+
+                    System.out.print("\n1. Main diagonal");
+                    System.out.print("2. Side diagonal");
+                    System.out.print("3. Vertical line");
+                    System.out.print("4. Horizontal line");
+                    System.out.print("Your choice: ");
+                    String choisT = InputStr();
+                    switch (choisT) {
+                        case "1" -> {
+                            System.out.print("Enter size of matrix: ");
+                            String[] size_m = InputStr().split("\\s+");
+                            System.out.println("Enter matrix:");
+                            Matrica m = inputmatrix(size_m);
+                            System.out.println("The result is:");
+                            Matrica m_result = Matrica.transpon1(m);
+                            Matrica.printMD(m_result);
+                            System.out.println("");
+                        }
+                        case "2" -> {
+                            System.out.print("Enter size of matrix: ");
+                            String[] size_m = InputStr().split("\\s+");
+                            System.out.println("Enter matrix:");
+                            Matrica m = inputmatrix(size_m);
+                            System.out.println("The result is:");
+                            Matrica m_result = Matrica.transpon2(m);
+                            Matrica.printMD(m_result);
+                            System.out.println("");
+                        }
+                        case "3" -> {
+                            System.out.print("Enter size of matrix: ");
+                            String[] size_m = InputStr().split("\\s+");
+                            System.out.println("Enter matrix:");
+                            Matrica m = inputmatrix(size_m);
+                            System.out.println("The result is:");
+                            Matrica m_result = Matrica.transpon3(m);
+                            Matrica.printMD(m_result);
+                            System.out.println("");
+                        }
+                        case "4" -> {
+                            System.out.print("Enter size of matrix: ");
+                            String[] size_m = InputStr().split("\\s+");
+                            System.out.println("Enter matrix:");
+                            Matrica m = inputmatrix(size_m);
+                            System.out.println("The result is:");
+                            Matrica m_result = Matrica.transpon4(m);
+                            Matrica.printMD(m_result);
+                            System.out.println("");
+                        }
+                    }
                 }
             }
         }
