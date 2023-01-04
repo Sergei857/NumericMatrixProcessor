@@ -25,10 +25,10 @@ public class Main {
                     String[] size_m2 = InputStr().split("\\s+");
                     System.out.println("Enter second matrix:");
                     Matrica m2 = inputmatrix(size_m2);
-                    if (size_m1.equals(size_m2)) {
+                    if (size_m1[0].equals(size_m2[0]) & size_m1[1].equals(size_m2[1])) {
                         System.out.println("The result is:");
                         Matrica m_result = Matrica.add(m1, m2);
-                        Matrica.printMI(m_result);
+                        Matrica.printMD(m_result);
                         System.out.println("");
                     } else {
                         System.out.println("The operation cannot be performed.\n");
@@ -57,7 +57,7 @@ public class Main {
                     Matrica m2 = inputmatrix(size_m2);
                     System.out.println("The result is:");
                     Matrica m_result = Matrica.mulmatrix(m1, m2);
-                    Matrica.printMI(m_result);
+                    Matrica.printMD(m_result);
                     System.out.println("");
                 }
             }
