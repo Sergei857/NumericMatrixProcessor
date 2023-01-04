@@ -25,10 +25,14 @@ public class Main {
                     String[] size_m2 = InputStr().split("\\s+");
                     System.out.println("Enter second matrix:");
                     Matrica m2 = inputmatrix(size_m2);
-                    System.out.println("The result is:");
-                    Matrica m_result = Matrica.add(m1, m2);
-                    Matrica.printMI(m_result);
-                    System.out.println("");
+                    if (size_m1.equals(size_m2)) {
+                        System.out.println("The result is:");
+                        Matrica m_result = Matrica.add(m1, m2);
+                        Matrica.printMI(m_result);
+                        System.out.println("");
+                    } else {
+                        System.out.println("The operation cannot be performed.\n");
+                    }
                 }
                 case "2" -> {
                     System.out.print("Enter size of matrix: ");
@@ -41,7 +45,6 @@ public class Main {
                     Matrica m_result = Matrica.mulconstant(m1, constant_of_m1);
                     Matrica.printMD(m_result);
                     System.out.println("");
-
                 }
                 case "3" -> {
                     System.out.print("Enter size of first matrix: ");
