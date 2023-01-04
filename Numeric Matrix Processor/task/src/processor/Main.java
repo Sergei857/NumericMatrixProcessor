@@ -12,6 +12,7 @@ public class Main {
             System.out.println("2. Multiply matrix by a constant");
             System.out.println("3. Multiply matrices");
             System.out.println("4. Transpose matrix");
+            System.out.println("5. Calculate a determinant");
             System.out.println("0. Exit");
             System.out.print("Your choice: ");
             String chois = InputStr();
@@ -112,6 +113,15 @@ public class Main {
                             System.out.println("");
                         }
                     }
+                }
+                case "5" -> {
+                    System.out.print("Enter size of matrix: ");
+                    String[] size_m = InputStr().split("\\s+");
+                    System.out.println("Enter matrix:");
+                    Matrica m = inputmatrix(size_m);
+                    Matrica m_result = Matrica.determinant(m);
+                    Matrica.printMD(m_result);
+                    System.out.println("");
                 }
             }
         }

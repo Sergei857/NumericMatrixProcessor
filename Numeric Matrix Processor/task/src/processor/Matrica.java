@@ -89,6 +89,20 @@ public class Matrica {
         return m;
     }
 
+    public static Matrica determinant(Matrica madd1) {
+        Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
+        for (int r = 0; r < madd1.rows_size; r++) {
+            for (int c = 0; c < madd1.columns_size; c++) {
+                m.arr[r][c] = madd1.arr[madd1.rows_size-r-1][c];
+            }
+        }
+        return m;
+    }
+
+
+
+
+
 
     public static void printMD(Matrica m) {
         for (int row = 0; row < m.rows_size; row++) {
