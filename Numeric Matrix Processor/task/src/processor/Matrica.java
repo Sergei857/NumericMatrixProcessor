@@ -34,16 +34,16 @@ public class Matrica {
 
 
     public static Matrica mulmatrix(Matrica madd1, Matrica madd2) {
-        Matrica m = new Matrica(madd2.rows_size, madd1.columns_size);
+        Matrica m = new Matrica(madd1.rows_size, madd2.columns_size);
         double temp = 0.0;
+        //int dlina = 0;
         {
             for (int r_new = 0; r_new < m.rows_size; r_new++)
-                for (int c_new = 0; c_new < m.rows_size; c_new++) {
-                    for (int r = 0; r < madd1.columns_size; r++) {
-                        for (int c = 0; c < madd1.columns_size; c++) {
-                            temp = temp + madd1.arr[][] + madd1.arr[][];
-                        }
+                for (int c_new = 0; c_new < m.columns_size; c_new++) {
+                    for (int dlina = 0; dlina < madd1.columns_size; dlina++) {
+                        temp = temp + madd1.arr[r_new][dlina] * madd2.arr[dlina][c_new];
                     }
+                    //Matrica.printMD(m);
                     m.arr[r_new][c_new] = temp;
                     temp = 0.0;
                 }

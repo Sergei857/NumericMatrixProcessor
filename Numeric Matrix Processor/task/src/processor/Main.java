@@ -59,6 +59,7 @@ public class Main {
                     Matrica m_result = Matrica.mulmatrix(m1, m2);
                     Matrica.printMD(m_result);
                     System.out.println("");
+
                 }
             }
         }
