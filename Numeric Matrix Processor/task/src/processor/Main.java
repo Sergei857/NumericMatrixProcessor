@@ -119,9 +119,7 @@ public class Main {
                     String[] size_m = InputStr().split("\\s+");
                     System.out.println("Enter matrix:");
                     Matrica m = inputmatrix(size_m);
-                    Matrica m_result = Matrica.determinant(m);
-                    Matrica.printMD(m_result);
-                    System.out.println("");
+                    System.out.println(Matrica.determinant(m));
                 }
             }
         }

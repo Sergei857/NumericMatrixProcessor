@@ -64,7 +64,7 @@ public class Matrica {
         Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
         for (int r = 0; r < madd1.rows_size; r++) {
             for (int c = 0; c < madd1.columns_size; c++) {
-                m.arr[r][c] = madd1.arr[m.rows_size-c-1][m.columns_size-r-1];
+                m.arr[r][c] = madd1.arr[m.rows_size - c - 1][m.columns_size - r - 1];
             }
         }
         return m;
@@ -74,34 +74,32 @@ public class Matrica {
         Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
         for (int r = 0; r < madd1.rows_size; r++) {
             for (int c = 0; c < madd1.columns_size; c++) {
-                m.arr[r][c] = madd1.arr[r][m.columns_size-c-1];
+                m.arr[r][c] = madd1.arr[r][m.columns_size - c - 1];
             }
         }
         return m;
     }
+
     public static Matrica transpon4(Matrica madd1) {
         Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
         for (int r = 0; r < madd1.rows_size; r++) {
             for (int c = 0; c < madd1.columns_size; c++) {
-                m.arr[r][c] = madd1.arr[madd1.rows_size-r-1][c];
+                m.arr[r][c] = madd1.arr[madd1.rows_size - r - 1][c];
             }
         }
         return m;
     }
 
-    public static Matrica determinant(Matrica madd1) {
-        Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
-        for (int r = 0; r < madd1.rows_size; r++) {
-            for (int c = 0; c < madd1.columns_size; c++) {
-                m.arr[r][c] = madd1.arr[madd1.rows_size-r-1][c];
+    public static Double determinant(Matrica madd1) {
+        if (madd1.rows_size == 2 & madd1.columns_size == 2) {
+            return madd1.arr[0][0] * madd1.arr[1][1] + madd1.arr[0][1] * madd1.arr[1][0];
+        } else {
+            for (int r = 0; r < madd1.rows_size; r++) {
+
             }
         }
-        return m;
+        return det;
     }
-
-
-
-
 
 
     public static void printMD(Matrica m) {
