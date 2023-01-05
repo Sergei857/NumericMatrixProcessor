@@ -134,7 +134,7 @@ public class Main {
                         System.out.println("This matrix doesn't have an inverse.\n");
                     } else {
                         System.out.println("The result is:");
-                        System.out.println(Matrica.invert(m));
+                        Matrica.printMD(Matrica.invert(m));
                         System.out.println("");
                     }
                 }
