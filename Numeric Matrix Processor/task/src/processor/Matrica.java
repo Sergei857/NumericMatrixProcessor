@@ -125,12 +125,42 @@ public class Matrica {
     public static Matrica invert(Matrica madd1) {
         Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
         double det = Matrica.determinant(madd1);
-        for (int c = 0; c < m.columns_size; c++) {
-            for (int r = 0; r < m.columns_size; r++) {
-
+        int c_shift = 0;
+        int r_shift = 0;
+        for (int r = 0; r < madd1.columns_size; r++) {
+            for (int c = 0; c < madd1.columns_size; c++) {
+                Matrica m_al = new Matrica(m.rows_size - 1, m.columns_size - 1);
+                for (int r_new = 0; r_new < m_al.columns_size; r_new++) {
+                    for (int c_new = 0; c_new < m_al.rows_size; c_new++) {
+                        if (c == 0) {
+                            c_shift = 1;
+                        } else if (c == 1 & c_new == 0) {
+                            c_shift = 0;
+                        } else if (c == 1 & c_new == 1) {
+                            c_shift = 1;
+                        } else if (c > 1 & c_new < c) {
+                            c_shift = 0;
+                        } else if (c > 1 & c_new >= c) {
+                            c_shift = 1;
+                        }
+                        if (r == 0) {
+                            r_shift = 1;
+                        } else if (r == 1 & r_new == 0) {
+                            r_shift = 0;
+                        } else if (r == 1 & r_new == 1) {
+                            r_shift = 1;
+                        } else if (r > 1 & r_new < r) {
+                            r_shift = 0;
+                        } else if (r > 1 & r_new >= r) {
+                            r_shift = 1;
+                        }
+                        m_al.arr[r_new][c_new] = madd1.arr[r_new + r_shift][c_new + c_shift];
+                    }
+                }
+                m.arr[r][c] = Matrica.determinant(m_al) * Math.pow(-1, r + 1 + c + 1) * (1 / det);
             }
-
         }
+        m = Matrica.transpon1(m);
         return m;
     }
 
