@@ -124,8 +124,11 @@ public class Matrica {
 
     public static Matrica invert(Matrica madd1) {
         Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
+        double det = Matrica.determinant(madd1);
+        for (int c = 0; c < m.columns_size; c++) {
+            for (int r = 0; r < m.columns_size; r++) {
 
-        for (int c = 0; c < madd1.columns_size; c++) {
+            }
 
         }
         return m;

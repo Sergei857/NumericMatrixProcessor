@@ -130,9 +130,13 @@ public class Main {
                     String[] size_m = InputStr().split("\\s+");
                     System.out.println("Enter matrix:");
                     Matrica m = inputmatrix(size_m);
-                    System.out.println("The result is:");
-                    System.out.println(Matrica.invert(m));
-                    System.out.println("");
+                    if (Matrica.determinant(m) == 0) {
+                        System.out.println("This matrix doesn't have an inverse.\n");
+                    } else {
+                        System.out.println("The result is:");
+                        System.out.println(Matrica.invert(m));
+                        System.out.println("");
+                    }
                 }
             }
         }
