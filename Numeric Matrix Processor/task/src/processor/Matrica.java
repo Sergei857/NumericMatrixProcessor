@@ -90,31 +90,45 @@ public class Matrica {
         return m;
     }
 
-    public static Double determinant(Matrica madd1) {
-        Double det;
+    public static double determinant(Matrica madd1) {
         if (madd1.rows_size == 2 & madd1.columns_size == 2) {
-            return madd1.arr[0][0] * madd1.arr[1][1] + madd1.arr[0][1] * madd1.arr[1][0];
+            return madd1.arr[0][0] * madd1.arr[1][1] - madd1.arr[0][1] * madd1.arr[1][0];
         } else {
-            Double coof = 0.0;
+            double det;
             det = 0.0;
-            int c_temp = 0;
+            int c_shift = 0;
             for (int c = 0; c < madd1.columns_size; c++) {
                 Matrica m = new Matrica(madd1.rows_size - 1, madd1.columns_size - 1);
                 for (int r_new = 0; r_new < m.rows_size; r_new++) {
                     for (int c_new = 0; c_new < m.columns_size; c_new++) {
                         if (c == 0) {
-                            c_temp = 1;
-                        } else {
-                            c_temp = c - 1;
+                            c_shift = 1;
+                        } else if (c == 1 & c_new == 0) {
+                            c_shift = 0;
+                        } else if (c == 1 & c_new == 1) {
+                            c_shift = 1;
+                        } else if (c > 1 & c_new < c) {
+                            c_shift = 0;
+                        } else if (c > 1 & c_new >= c) {
+                            c_shift = 1;
                         }
-                        m.arr[r_new][c_new] = madd1.arr[r_new + 1][c_temp];
+                        m.arr[r_new][c_new] = madd1.arr[r_new + 1][c_new + c_shift];
                     }
                 }
-                coof = madd1.arr[0][c] * (Math.pow(-1, 1 + c + 1)) * determinant(m);
-                det = det + coof;
+                det = det + madd1.arr[0][c] * (Math.pow(-1, 1 + c + 1)) * determinant(m);
             }
             return det;
         }
+    }
+
+
+    public static Matrica invert(Matrica madd1) {
+        Matrica m = new Matrica(madd1.rows_size, madd1.columns_size);
+
+        for (int c = 0; c < madd1.columns_size; c++) {
+
+        }
+        return m;
     }
 
 

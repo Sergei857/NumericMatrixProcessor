@@ -13,6 +13,7 @@ public class Main {
             System.out.println("3. Multiply matrices");
             System.out.println("4. Transpose matrix");
             System.out.println("5. Calculate a determinant");
+            System.out.println("6. Inverse matrix");
             System.out.println("0. Exit");
             System.out.print("Your choice: ");
             String chois = InputStr();
@@ -119,7 +120,19 @@ public class Main {
                     String[] size_m = InputStr().split("\\s+");
                     System.out.println("Enter matrix:");
                     Matrica m = inputmatrix(size_m);
+                    System.out.println("The result is:");
                     System.out.println(Matrica.determinant(m));
+                    System.out.println("");
+                }
+
+                case "6" -> {
+                    System.out.print("Enter size of matrix: ");
+                    String[] size_m = InputStr().split("\\s+");
+                    System.out.println("Enter matrix:");
+                    Matrica m = inputmatrix(size_m);
+                    System.out.println("The result is:");
+                    System.out.println(Matrica.invert(m));
+                    System.out.println("");
                 }
             }
         }
